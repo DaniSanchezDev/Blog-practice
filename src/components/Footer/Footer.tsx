@@ -2,9 +2,9 @@ import './Footer.css'
 
 function Footer() {
   return (
-    <div>
-      
-    </div>
+    <footer>
+      <p>&copy; 2025 Daniel Sánchez Vázquez</p>
+    </footer>
   )
 }
 
