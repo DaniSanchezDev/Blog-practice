@@ -2,9 +2,9 @@ import './Header.css'
 
 function Header() {
   return (
-    <div>
-        <h1>Blog</h1>
-    </div>
+    <header>
+      <h1>Blog</h1>
+    </header>
   )
 }
 
