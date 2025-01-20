@@ -1,11 +1,30 @@
-@import './reset.css';
+@import "./reset.css";
 
 #root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-body{
-    position: relative
+body {
+  position: relative;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+main h2 {
+  font-size: 2rem;
+}
+
+.no-items {
+  font-size: 1.5rem;
+  color: #666;
 }
