@@ -1,4 +1,4 @@
-export interface Root {
+export interface PostResponse {
     userId: number
     id: number
     title: string
