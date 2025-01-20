@@ -1,17 +1,26 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import './App.css'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Navbar from './components/Navbar'
+import ErrorPages from './pages/ErrorPages'
+import NotFoundPages from './pages/NotFoundPages'
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <h1>Home</h1>,
+    errorElement:<ErrorPages />
+  },
+  {
+    path: '*',
+    element: <NotFoundPages />
+  }
+])
 
 function App() {
 
   return (
-    <div>
-      <Header />
-      <Navbar />
-      <Footer />
-    </div>
+    <RouterProvider router={router} />
   )
 }
 
