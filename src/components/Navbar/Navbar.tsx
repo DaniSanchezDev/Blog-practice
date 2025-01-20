@@ -1,13 +1,14 @@
+import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 
 function Navbar() {
     return (
         <nav>
             <ul>
-                <li><a href="./home" className='active'>Home</a></li>
-                <li><a href="./users">Users</a></li>
-                <li><a href="./posts">Posts</a></li>
-                <li><a href="/register">Register</a></li>
+                <li><NavLink to="./home" className='active'>Home</NavLink></li>
+                <li><NavLink to="./users">Users</NavLink></li>
+                <li><NavLink to="./posts">Posts</NavLink></li>
+                <li><NavLink to="/register">Register</NavLink></li>
             </ul>
         </nav>
     )
