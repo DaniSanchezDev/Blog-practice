@@ -5,6 +5,8 @@ import ErrorPages from './pages/ErrorPages'
 import NotFoundPages from './pages/NotFoundPages'
 import Root from './routers/Root'
 import Home from './routers/Home'
+import Posts from './routers/Posts'
+import Users from './routers/Users'
 
 
 const router = createBrowserRouter([
@@ -22,6 +24,16 @@ const router = createBrowserRouter([
         path:'home',
         element:<Home />,
         loader: Home.loader
+      },
+      {
+        path:'posts',
+        element:<Posts />,
+        loader: Posts.loader
+      },
+      {
+        path:'users',
+        element:<Users />,
+        loader: Users.loader
       }
     ]
   },

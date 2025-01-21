@@ -7,17 +7,17 @@ const loader: LoaderFunction = async function () {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     // creamos la constante posts para guardar los json de la respuesta. Le ponemos tb el tipado de TS
     const posts: PostResponse[] = await response.json();
-    // seleccionamos los 10 primeros posts. Si no el ponemos esta linea cargará TODOS los posts
-    return posts.slice(0,10);
+    // devolvemos todos los posts. Si no el ponemos esta linea cargará TODOS los posts
+    return posts
 }
 
-function Home() {
+function Posts() {
 
     const posts = useLoaderData() as PostResponse[];
     
   return (
     <>
-      <h2>Featured posts</h2>
+      <h2>Posts</h2>
       {posts.length === 0 ?
        <p className="no.items">No posts</p> :
        (
@@ -30,6 +30,6 @@ function Home() {
 }
 
 
-Home.loader = loader;
+Posts.loader = loader;
 
-export default Home
+export default Posts
