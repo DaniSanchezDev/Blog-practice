@@ -1,15 +1,19 @@
 import { Link } from 'react-router-dom';
 import './ListItem.css'
 
-type ListItemProps= {
+export type ListItemType= {
     text: string;
     link: string;
 }
 
-function ListItem({ text, link }: ListItemProps) {
+type ListItemProp = {
+    item: ListItemType;
+}
+
+function ListItem({ item }: ListItemProp) {
   return (
     <div className='link'>
-      <Link to={link}>{text}</Link>
+      <Link to={item.link}>{item.text}</Link>
     </div>
   )
 }
