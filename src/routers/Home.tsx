@@ -13,6 +13,7 @@ const loader: LoaderFunction = async function () {
 function Home() {
 
     const posts = useLoaderData() as PostResponse[];
+    
   return (
     <div>
       <h2>Featured posts</h2>
