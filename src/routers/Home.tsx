@@ -1,5 +1,6 @@
 import { LoaderFunction, useLoaderData } from "react-router-dom"
 import { PostResponse } from "../types/app";
+import List from "../components/List";
 
 const loader: LoaderFunction = async function () {
     // creamos la funcion asincrona y le prometemos que la respuesta está esperando por los json de la API
@@ -17,10 +18,13 @@ function Home() {
   return (
     <div>
       <h2>Featured posts</h2>
-    {/* quedamos aqui para continuar */}
       {posts.length === 0 ?
        <p className="no.items">No posts</p> :
-       <p>There are {posts.length} posts</p>}
+       (
+        //Creamos la ruta para los posts que tengan cada id correspondiente
+        <List items={posts.map(post => ({text: post.title, link: `/posts/${post.id}`}))} />
+       )}
+
     </div>
   )
 }
