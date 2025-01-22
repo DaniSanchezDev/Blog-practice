@@ -9,6 +9,7 @@ import Posts from './routers/Posts'
 import Users from './routers/Users'
 import PostDetails from './routers/PostDetails'
 import UserDetails from './routers/UserDetails'
+import Register from './routers/Register'
 
 
 const router = createBrowserRouter([
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
             loader: UserDetails.loader
           }
         ]
+      },
+      {
+        path: 'register',
+        element: <Register />,
+        action: Register.action
       }
     ]
   },
