@@ -7,6 +7,8 @@ import Root from './routers/Root'
 import Home from './routers/Home'
 import Posts from './routers/Posts'
 import Users from './routers/Users'
+import PostDetails from './routers/PostDetails'
+import UserDetails from './routers/UserDetails'
 
 
 const router = createBrowserRouter([
@@ -27,13 +29,36 @@ const router = createBrowserRouter([
       },
       {
         path:'posts',
-        element:<Posts />,
-        loader: Posts.loader
+        children:[
+          {
+            // usamos index true siempre que tenemos hijos para que muestre la ruta tal cual la tenemos en el primer hijo
+            index: true,
+            element: <Posts />,
+            loader: Posts.loader
+
+          },
+          {
+            // usamos los 2 puntos para usarlo como variable, nos viene como String
+            path: ':postId',
+            element: <PostDetails />,
+            loader: PostDetails.loader
+          }
+        ]
       },
       {
         path:'users',
-        element:<Users />,
-        loader: Users.loader
+        children:[
+          {
+            index: true,
+            element:<Users />,
+            loader: Users.loader
+          },
+          {
+            path:':userId',
+            element: <UserDetails />,
+            loader: UserDetails.loader
+          }
+        ]
       }
     ]
   },
